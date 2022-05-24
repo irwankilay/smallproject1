@@ -10,8 +10,8 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 ;
 @        IN     NS      ns1.samehada.com.
-ns1      IN      A       192.168.56.10
-@        IN      A       192.168.56.10
+ns1      IN      A       192.168.56.11
+@        IN      A       192.168.56.11
 www      IN      CNAME   samehada.com.
 landpage IN      A       192.168.56.11
 wpress   IN      A       192.168.56.12
