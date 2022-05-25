@@ -26,4 +26,4 @@ sudo mv -f smallproject1-master/resolv.conf /etc
 
 cd /var/www/html/
 
-sudo service bind9 start
+sudo service bind9 restart
