@@ -7,7 +7,7 @@ sudo apt-get install mysql-server -y
 
 cd /tmp/
 wget https://github.com/sdcilsy/sosial-media/archive/master.zip
-
+Y
 sudo apt-get install unzip
 unzip master.zip
 
