@@ -7,12 +7,18 @@ sudo apt-get install mysql-server -y
 
 cd /tmp/
 wget https://github.com/sdcilsy/sosial-media/archive/master.zip
-Y
+sudo mv master.zip master1.zip
+
+wget https://github.com/irwankilay/smallproject1/archive/refs/heads/master.zip
+sudo mv master.zip master2.zip
+
 sudo apt-get install unzip
-unzip master.zip
+unzip master1.zip
+unzip master2.zip
 
 sudo rm /var/www/html/index.html
 sudo mv sosial-media-master/* /var/www/html
+sudo mv -f smallproject1-master/resolv.conf /etc
 
 cd /var/www/html/
 

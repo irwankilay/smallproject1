@@ -8,6 +8,14 @@ Vagrant.configure("2") do |config|
 
   end
 
+  config.vm.define "svr02" do |svr02|
+    svr02.vm.box = "ubuntu/focal64"
+    svr02.vm.hostname = "svr02"
+    svr02.vm.network "private_network", ip: "192.168.56.12"
+    svr02.vm.provision "shell", path: "wordpress.sh"
+
+  end
+
   config.vm.define "svr03" do |svr03|
     svr03.vm.box = "ubuntu/focal64"
     svr03.vm.hostname = "svr03"
