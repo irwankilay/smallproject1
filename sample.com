@@ -1,42 +1,42 @@
 # Redirect HTTP -> HTTPS
 server {
 listen 80;
-server_name www.sample.com sample.com;
+server_name wpress.masehada.com;
 
 include snippets/letsencrypt.conf;
-return 301 https://sample.com$request_uri;
+return 301 https://wpress.masehada.com$request_uri;
 }
 
 # Redirect WWW -> NON-WWW
 server {
 listen 443 ssl http2;
-server_name www.sample.com;
+server_name wpress.masehada.com;
 
-ssl_certificate /etc/letsencrypt/live/sample.com/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/sample.com/privkey.pem;
-ssl_trusted_certificate /etc/letsencrypt/live/sample.com/chain.pem;
+ssl_certificate /etc/letsencrypt/live/wpress.masehada.com/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/wpress.masehada.com/privkey.pem;
+ssl_trusted_certificate /etc/letsencrypt/live/wpress.masehada.com/chain.pem;
 include snippets/ssl.conf;
 
-return 301 https://sample.com$request_uri;
+return 301 https://wpress.masehada.com$request_uri;
 }
 
 server {
 listen 443 ssl http2;
-server_name sample.com;
+server_name wpress.masehada.com;
 
-root /var/www/html/sample.com;
+root /var/www/html/wpress.masehada.com;
 index index.php;
 
 # SSL parameters
-ssl_certificate /etc/letsencrypt/live/sample.com/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/sample.com/privkey.pem;
-ssl_trusted_certificate /etc/letsencrypt/live/sample.com/chain.pem;
+ssl_certificate /etc/letsencrypt/live/wpress.masehada.com/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/wpress.masehada.com/privkey.pem;
+ssl_trusted_certificate /etc/letsencrypt/live/wpress.masehada.com/chain.pem;
 include snippets/ssl.conf;
 include snippets/letsencrypt.conf;
 
 # log files
-access_log /var/log/nginx/sample.com.access.log;
-error_log /var/log/nginx/sample.com.error.log;
+access_log /var/log/nginx/wpress.masehada.com.access.log;
+error_log /var/log/nginx/wpress.masehada.com.error.log;
 
 location = /favicon.ico {
 log_not_found off;
